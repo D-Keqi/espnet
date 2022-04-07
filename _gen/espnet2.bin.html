@@ -133,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-aggregate-stats-dirs">espnet2.bin.aggregate_stats_dirs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-init">espnet2.bin.__init__</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-enh-inference">espnet2.bin.enh_inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-st-inference-streaming">espnet2.bin.st_inference_streaming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-tts-inference">espnet2.bin.tts_inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-launch">espnet2.bin.launch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#espnet2-bin-hubert-train">espnet2.bin.hubert_train</a></li>
@@ -1397,8 +1398,58 @@ Currently, the tags of espnet_model_zoo are supported.</p>
 <dd></dd></dl>
 
 </section>
+<section id="espnet2-bin-st-inference-streaming">
+<span id="id25"></span><h2>espnet2.bin.st_inference_streaming<a class="headerlink" href="#espnet2-bin-st-inference-streaming" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-espnet2.bin.st_inference_streaming"></span><dl class="class">
+<dt id="espnet2.bin.st_inference_streaming.Speech2TextStreaming">
+<em class="property">class </em><code class="sig-prename descclassname">espnet2.bin.st_inference_streaming.</code><code class="sig-name descname">Speech2TextStreaming</code><span class="sig-paren">(</span><em class="sig-param">st_train_config: Union[pathlib.Path, str], st_model_file: Union[pathlib.Path, str] = None, lm_train_config: Union[pathlib.Path, str] = None, lm_file: Union[pathlib.Path, str] = None, token_type: str = None, bpemodel: str = None, device: str = 'cpu', maxlenratio: float = 0.0, minlenratio: float = 0.0, batch_size: int = 1, dtype: str = 'float32', beam_size: int = 20, lm_weight: float = 1.0, penalty: float = 0.0, nbest: int = 1, disable_repetition_detection=False, decoder_text_length_limit=0, encoded_feat_length_limit=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#Speech2TextStreaming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.Speech2TextStreaming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Speech2TextStreaming class</p>
+<p>Details in “Streaming Transformer ASR with Blockwise Synchronous Beam Search”
+(<a class="reference external" href="https://arxiv.org/abs/2006.14941">https://arxiv.org/abs/2006.14941</a>)</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">soundfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">speech2text</span> <span class="o">=</span> <span class="n">Speech2TextStreaming</span><span class="p">(</span><span class="s2">&quot;asr_config.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;asr.pth&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audio</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">soundfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;speech.wav&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">speech2text</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+<span class="go">[(text, token, token_int, hypothesis object), ...]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="espnet2.bin.st_inference_streaming.Speech2TextStreaming.apply_frontend">
+<code class="sig-name descname">apply_frontend</code><span class="sig-paren">(</span><em class="sig-param">speech: torch.Tensor</em>, <em class="sig-param">prev_states=None</em>, <em class="sig-param">is_final: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#Speech2TextStreaming.apply_frontend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.Speech2TextStreaming.apply_frontend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="espnet2.bin.st_inference_streaming.Speech2TextStreaming.assemble_hyps">
+<code class="sig-name descname">assemble_hyps</code><span class="sig-paren">(</span><em class="sig-param">hyps</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#Speech2TextStreaming.assemble_hyps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.Speech2TextStreaming.assemble_hyps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="espnet2.bin.st_inference_streaming.Speech2TextStreaming.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#Speech2TextStreaming.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.Speech2TextStreaming.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="espnet2.bin.st_inference_streaming.get_parser">
+<code class="sig-prename descclassname">espnet2.bin.st_inference_streaming.</code><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#get_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.get_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="espnet2.bin.st_inference_streaming.inference">
+<code class="sig-prename descclassname">espnet2.bin.st_inference_streaming.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param">output_dir: str, maxlenratio: float, minlenratio: float, batch_size: int, dtype: str, beam_size: int, ngpu: int, seed: int, lm_weight: float, penalty: float, nbest: int, num_workers: int, log_level: Union[int, str], data_path_and_name_and_type: Sequence[Tuple[str, str, str]], key_file: Optional[str], st_train_config: str, st_model_file: str, lm_train_config: Optional[str], lm_file: Optional[str], word_lm_train_config: Optional[str], word_lm_file: Optional[str], token_type: Optional[str], bpemodel: Optional[str], allow_variable_data_keys: bool, sim_chunk_length: int, disable_repetition_detection: bool, encoded_feat_length_limit: int, decoder_text_length_limit: int</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#inference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.inference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="espnet2.bin.st_inference_streaming.main">
+<code class="sig-prename descclassname">espnet2.bin.st_inference_streaming.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">cmd=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/st_inference_streaming.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.st_inference_streaming.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
 <section id="espnet2-bin-tts-inference">
-<span id="id25"></span><h2>espnet2.bin.tts_inference<a class="headerlink" href="#espnet2-bin-tts-inference" title="Permalink to this headline">¶</a></h2>
+<span id="id26"></span><h2>espnet2.bin.tts_inference<a class="headerlink" href="#espnet2-bin-tts-inference" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-espnet2.bin.tts_inference"></span><p>Script to run the inference of text-to-speeech model.</p>
 <dl class="class">
 <dt id="espnet2.bin.tts_inference.Text2Speech">
@@ -1509,7 +1560,7 @@ start with the prefix “parallel_wavegan/”.</p></li>
 
 </section>
 <section id="espnet2-bin-launch">
-<span id="id26"></span><h2>espnet2.bin.launch<a class="headerlink" href="#espnet2-bin-launch" title="Permalink to this headline">¶</a></h2>
+<span id="id27"></span><h2>espnet2.bin.launch<a class="headerlink" href="#espnet2-bin-launch" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-espnet2.bin.launch"></span><dl class="function">
 <dt id="espnet2.bin.launch.get_parser">
 <code class="sig-prename descclassname">espnet2.bin.launch.</code><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/launch.html#get_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.launch.get_parser" title="Permalink to this definition">¶</a></dt>
@@ -1522,7 +1573,7 @@ start with the prefix “parallel_wavegan/”.</p></li>
 
 </section>
 <section id="espnet2-bin-hubert-train">
-<span id="id27"></span><h2>espnet2.bin.hubert_train<a class="headerlink" href="#espnet2-bin-hubert-train" title="Permalink to this headline">¶</a></h2>
+<span id="id28"></span><h2>espnet2.bin.hubert_train<a class="headerlink" href="#espnet2-bin-hubert-train" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-espnet2.bin.hubert_train"></span><dl class="function">
 <dt id="espnet2.bin.hubert_train.get_parser">
 <code class="sig-prename descclassname">espnet2.bin.hubert_train.</code><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/espnet2/bin/hubert_train.html#get_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#espnet2.bin.hubert_train.get_parser" title="Permalink to this definition">¶</a></dt>
