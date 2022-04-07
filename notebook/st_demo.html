@@ -1,78 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>ESPnet Speech Translation Demonstration &mdash; ESPnet 0.9.8 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>ESPnet Speech Translation Demonstration &mdash; ESPnet 0.10.7a1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="espnet.st package" href="../_gen/espnet.st.html" />
-    <link rel="prev" title="ESPnet real time E2E-TTS demonstration" href="tts_realtime_demo.html" /> 
+    <link rel="next" title="Text-to-Speech (Recipe)" href="tts_cli.html" />
+    <link rel="prev" title="ESPnet Speech Enhancement Demonstration" href="se_demo.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> ESPnet
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                0.9.8
+                0.10.7a1
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,19 +41,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Tutorial:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Tutorial:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Usage</a></li>
@@ -100,7 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker.html">Docker</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ESPnet2:</span></p>
+<p><span class="caption-text">ESPnet2:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../espnet2_tutorial.html">ESPnet2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../espnet2_tutorial.html#instruction-for-run-sh">Instruction for run.sh</a></li>
@@ -108,13 +58,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../espnet2_task.html">Task class and data input system for training</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../espnet2_distributed.html">Distributed training</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Notebook:</span></p>
+<p><span class="caption-text">Notebook:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="asr_cli.html">Speech Recognition (Recipe)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="asr_library.html">Speech Recognition (Library)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tts_cli.html">Text-to-Speech (Recipe)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_asr_realtime_demo.html">ESPnet2-ASR realtime demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_streaming_asr_demo.html">ESPnet2 real streaming Transformer demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_tts_realtime_demo.html">ESPnet2-TTS realtime demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_tutorial_2021_CMU_11751_18781.html">CMU 11751/18781 2021: ESPnet Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_tutorial_2021_CMU_11751_18781.html#Run-an-inference-example">Run an inference example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_tutorial_2021_CMU_11751_18781.html#Full-installation">Full installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet2_tutorial_2021_CMU_11751_18781.html#Run-a-recipe-example">Run a recipe example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet_se_demonstration_for_waspaa_2021.html">ESPnet Speech Enhancement Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet_se_demonstration_for_waspaa_2021.html#Contents">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet_se_demonstration_for_waspaa_2021.html#(1)-Tutorials-on-the-Basic-Usage">(1) Tutorials on the Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espnet_se_demonstration_for_waspaa_2021.html#(2)-Tutorials-on-Contributing-to-ESPNet-SE-Project">(2) Tutorials on Contributing to ESPNet-SE Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pretrained.html">Pretrained Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tts_realtime_demo.html">ESPnet real time E2E-TTS demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="se_demo.html">ESPnet Speech Enhancement Demonstration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ESPnet Speech Translation Demonstration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Install">Install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Spanish-speech--&gt;-English-text-translation">Spanish speech -&gt; English text translation</a></li>
@@ -124,41 +84,48 @@
 <li class="toctree-l2"><a class="reference internal" href="#Details-of-ESPnet-tools">Details of ESPnet tools</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tts_cli.html">Text-to-Speech (Recipe)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tts_realtime_demo.html">ESPnet real time E2E-TTS demonstration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p><span class="caption-text">Package Reference:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.st.html">espnet.st package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.optimizer.html">espnet.optimizer package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.lm.html">espnet.lm package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.tts.html">espnet.tts package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.mt.html">espnet.mt package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.utils.html">espnet.utils package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.transform.html">espnet.transform package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.asr.html">espnet.asr package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.nets.html">espnet.nets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.vc.html">espnet.vc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.tts.html">espnet.tts package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.bin.html">espnet.bin package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.scheduler.html">espnet.scheduler package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.vc.html">espnet.vc package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.utils.html">espnet.utils package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.optimizer.html">espnet.optimizer package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.nets.html">espnet.nets package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.mt.html">espnet.mt package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet.asr.html">espnet.asr package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.tasks.html">espnet2.tasks package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.text.html">espnet2.text package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.optimizers.html">espnet2.optimizers package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.torch_utils.html">espnet2.torch_utils package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.iterators.html">espnet2.iterators package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.lm.html">espnet2.lm package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.tts.html">espnet2.tts package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.diar.html">espnet2.diar package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.bin.html">espnet2.bin package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.st.html">espnet2.st package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.layers.html">espnet2.layers package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.schedulers.html">espnet2.schedulers package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.enh.html">espnet2.enh package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.utils.html">espnet2.utils package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.main_funcs.html">espnet2.main_funcs package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.asr.html">espnet2.asr package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.fileio.html">espnet2.fileio package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.hubert.html">espnet2.hubert package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.samplers.html">espnet2.samplers package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.enh.html">espnet2.enh package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.lm.html">espnet2.lm package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.tasks.html">espnet2.tasks package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.mt.html">espnet2.mt package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.utils.html">espnet2.utils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.text.html">espnet2.text package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.gan_tts.html">espnet2.gan_tts package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.asr.html">espnet2.asr package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.tts.html">espnet2.tts package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.fst.html">espnet2.fst package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.bin.html">espnet2.bin package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.iterators.html">espnet2.iterators package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.fileio.html">espnet2.fileio package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.schedulers.html">espnet2.schedulers package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.train.html">espnet2.train package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.torch_utils.html">espnet2.torch_utils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.main_funcs.html">espnet2.main_funcs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_gen/espnet2.diar.html">espnet2.diar package</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tool Reference:</span></p>
+<p><span class="caption-text">Tool Reference:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../apis/espnet_bin.html">core tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apis/espnet2_bin.html">core tools (espnet2)</a></li>
@@ -166,71 +133,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../apis/utils_sh.html">bash utility tools</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">ESPnet</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>ESPnet Speech Translation Demonstration</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/notebook/st_demo.ipynb.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -441,7 +367,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -501,7 +427,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="ESPnet-Speech-Translation-Demonstration">
+<section id="ESPnet-Speech-Translation-Demonstration">
 <h1>ESPnet Speech Translation Demonstration<a class="headerlink" href="#ESPnet-Speech-Translation-Demonstration" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://colab.research.google.com/github/espnet/notebook/blob/master/st_demo.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>See also</p>
@@ -511,15 +437,14 @@ div.rendered_html tbody tr:hover {
 <li><p>TTS demo: <a class="reference external" href="https://colab.research.google.com/github/espnet/notebook/blob/master/tts_realtime_demo.ipynb">https://colab.research.google.com/github/espnet/notebook/blob/master/tts_realtime_demo.ipynb</a></p></li>
 </ul>
 <p>Author: <a class="reference external" href="https://github.com/ShigekiKarita">Shigeki Karita</a></p>
-<div class="section" id="Install">
+<section id="Install">
 <h2>Install<a class="headerlink" href="#Install" title="Permalink to this headline">¶</a></h2>
 <p>It takes around 3 minutes. Please keep waiting for a while.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span># OS setup
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span># OS setup
 !cat /etc/os-release
 !apt-get install -qq bc tree sox
 
@@ -674,17 +599,16 @@ tar: Error is not recoverable: exiting now
 setup done.
 </pre></div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="Spanish-speech--&gt;-English-text-translation">
+<section id="Spanish-speech--&gt;-English-text-translation">
 <h2>Spanish speech -&gt; English text translation<a class="headerlink" href="#Spanish-speech-->-English-text-translation" title="Permalink to this headline">¶</a></h2>
 <p>This audio says “yo soy José.”</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from IPython.display import display, Audio
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from IPython.display import display, Audio
 display(Audio(&quot;/content/espnet/test_utils/st_test.wav&quot;, rate=16000))
 </pre></div>
 </div>
@@ -703,8 +627,7 @@ display(Audio(&quot;/content/espnet/test_utils/st_test.wav&quot;, rate=16000))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span># move on the recipe directory
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span># move on the recipe directory
 import os
 os.chdir(&quot;/content/espnet/egs/fisher_callhome_spanish/st1&quot;)
 
@@ -773,16 +696,15 @@ Finished
 </pre></div></div>
 </div>
 <p>As seen above, we successfully obtained the result: <strong>“Translated text: yes i’m jose”</strong>!</p>
-</div>
-<div class="section" id="English-translated-text-to-speech-synthesis">
+</section>
+<section id="English-translated-text-to-speech-synthesis">
 <h2>English translated text-to-speech synthesis<a class="headerlink" href="#English-translated-text-to-speech-synthesis" title="Permalink to this headline">¶</a></h2>
 <p>Now let’s generate an <strong>English speech</strong> from the translated text using a pretrained ESPnet-TTS model.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!sed -n &#39;s/Translated text://p&#39;  /content/translated.txt | tr &#39;[:lower:]&#39; &#39;[:upper:]&#39; | tee /content/translated_sed.txt
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!sed -n &#39;s/Translated text://p&#39;  /content/translated.txt | tr &#39;[:lower:]&#39; &#39;[:upper:]&#39; | tee /content/translated_sed.txt
 !../../../utils/synth_wav.sh /content/translated_sed.txt
 </pre></div>
 </div>
@@ -821,8 +743,7 @@ Finished
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>import matplotlib.pyplot as plt
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>import matplotlib.pyplot as plt
 import kaldiio
 fbank = next(iter(kaldiio.load_scp(&quot;decode/translated_sed/outputs/feats.scp&quot;).values()))
 plt.matshow(fbank.T)
@@ -848,8 +769,7 @@ plt.matshow(fbank.T)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from IPython.display import display, Audio
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from IPython.display import display, Audio
 display(Audio(&quot;decode/translated_sed/wav_wnv/translated_sed_gen.wav&quot;))
 </pre></div>
 </div>
@@ -864,16 +784,15 @@ display(Audio(&quot;decode/translated_sed/wav_wnv/translated_sed_gen.wav&quot;))
 </audio></div>
 </div>
 <p>Successfully, it says “Yes I’m Jose”! For more TTS demo, visit <a class="reference external" href="https://colab.research.google.com/github/espnet/notebook/blob/master/tts_realtime_demo.ipynb">https://colab.research.google.com/github/espnet/notebook/blob/master/tts_realtime_demo.ipynb</a></p>
-</div>
-<div class="section" id="Check-decoding-log">
+</section>
+<section id="Check-decoding-log">
 <h2>Check decoding log<a class="headerlink" href="#Check-decoding-log" title="Permalink to this headline">¶</a></h2>
 <p>After the translation, you will find <code class="docutils literal notranslate"><span class="pre">&lt;decode_dir&gt;/&lt;wav</span> <span class="pre">name&gt;/result.json</span></code> for details;</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!cat decode/st_test/result.json
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!cat decode/st_test/result.json
 </pre></div>
 </div>
 </div>
@@ -912,8 +831,7 @@ display(Audio(&quot;decode/translated_sed/wav_wnv/translated_sed_gen.wav&quot;))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!cat decode/st_test/log/decode.log
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!cat decode/st_test/log/decode.log
 </pre></div>
 </div>
 </div>
@@ -958,8 +876,7 @@ display(Audio(&quot;decode/translated_sed/wav_wnv/translated_sed_gen.wav&quot;))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from dateutil import parser
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from dateutil import parser
 from subprocess import PIPE, run
 
 # calc input duration (seconds)
@@ -988,16 +905,15 @@ Real-time factor:        0.7755
 </pre></div></div>
 </div>
 <p>As you can see above, ESPnet-ST can <strong>translate speech faster than the input</strong> (it should be RTF &lt; 1.0).</p>
-</div>
-<div class="section" id="Training-ST-models-from-scratch">
+</section>
+<section id="Training-ST-models-from-scratch">
 <h2>Training ST models from scratch<a class="headerlink" href="#Training-ST-models-from-scratch" title="Permalink to this headline">¶</a></h2>
 <p>We provide <a class="reference external" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi-style recipes</a> for ST as well as <a class="reference external" href="https://colab.research.google.com/github/espnet/notebook/blob/master/asr_cli.ipynb">ASR</a> and <a class="reference external" href="https://colab.research.google.com/github/espnet/notebook/blob/master/tts_cli.ipynb">TTS</a> as all-in-one bash script <code class="docutils literal notranslate"><span class="pre">run.sh</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!cd /content/espnet/egs/must_c/st1/ &amp;&amp; ./run.sh --must-c /content
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!cd /content/espnet/egs/must_c/st1/ &amp;&amp; ./run.sh --must-c /content
 </pre></div>
 </div>
 </div>
@@ -1033,15 +949,14 @@ tar: Error is not recoverable: exiting now
 </pre></div></div>
 </div>
 <p>However, it takes too much time to finish downloading the dataset. So we cancel the cell above.</p>
-</div>
-<div class="section" id="Details-of-ESPnet-tools">
+</section>
+<section id="Details-of-ESPnet-tools">
 <h2>Details of ESPnet tools<a class="headerlink" href="#Details-of-ESPnet-tools" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!../../../utils/translate_wav.sh --help
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!../../../utils/translate_wav.sh --help
 </pre></div>
 </div>
 </div>
@@ -1084,8 +999,7 @@ Available models:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!../../../utils/synth_wav.sh --help
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!../../../utils/synth_wav.sh --help
 </pre></div>
 </div>
 </div>
@@ -1140,60 +1054,42 @@ Available vocoder models:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../_gen/espnet.st.html" class="btn btn-neutral float-right" title="espnet.st package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="tts_realtime_demo.html" class="btn btn-neutral float-left" title="ESPnet real time E2E-TTS demonstration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="se_demo.html" class="btn btn-neutral float-left" title="ESPnet Speech Enhancement Demonstration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tts_cli.html" class="btn btn-neutral float-right" title="Text-to-Speech (Recipe)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017, Shinji Watanabe.
-
-    </p>
+    <p>&#169; Copyright 2017, Shinji Watanabe.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
